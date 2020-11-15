@@ -5,7 +5,15 @@ url1 = "https://api1.mimikko.cn/client/love/ExchangeReward?code="+os.environ["se
 url2 = "&AppID=wjB7LOP2sYkaMGLC&Authorization="+os.environ["mimikko_data"]
 
 req = urllib2.Request(url1+url2)
-print req
+
+res_data = urllib2.urlopen(req)
+res = res_data.read()
+print res
+
+url = "https://api1.mimikko.cn/client/love/ExchangeReward?AppID=wjB7LOP2sYkaMGLC"
+header = {"Authorization":os.environ["mimikko_data"]}
+
+req = urllib2.Request(url,headers=header)
 
 res_data = urllib2.urlopen(req)
 res = res_data.read()

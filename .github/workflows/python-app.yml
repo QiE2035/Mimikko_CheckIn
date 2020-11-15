@@ -2,7 +2,7 @@ name: Python application
 
 env:
   mimikko_data: ${{ secrets.MIMIKKO_DATA }}
-  servant: momona
+  servant: ${{ secrets.SERVANT }}
 
 on:
   push:
